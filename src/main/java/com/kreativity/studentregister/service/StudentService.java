@@ -15,5 +15,6 @@ public interface StudentService {
 	public void deleteStudent(Integer stdId);
 
 	public ResponseEntity<?> login(LoginDto dto);
+	boolean isEmailExists(String email);
 
 }

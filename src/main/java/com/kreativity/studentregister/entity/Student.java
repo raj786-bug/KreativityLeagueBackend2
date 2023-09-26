@@ -26,7 +26,7 @@ public class Student {
 	private String parentsName;
 	@Column(name="relationship")
 	private String relationship;
-	@Column(name="email")
+	@Column(name="email", unique = true)
 	private String email;
 	@Column(name="password")
 	private String password;

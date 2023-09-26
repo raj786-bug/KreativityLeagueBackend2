@@ -1,4 +1,4 @@
-package com.kreativity.studentregister.controller;
+/*package com.kreativity.studentregister.controller;
 
 import java.io.IOException;
 
@@ -33,3 +33,4 @@ public class SchoolInfoController {
     }
 
 }
+*/

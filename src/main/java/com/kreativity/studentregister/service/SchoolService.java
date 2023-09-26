@@ -13,4 +13,5 @@ public interface SchoolService {
 	public List<School> getAllSchool();
 	public void deleteSchool(Integer tId);
 	public List<School> getAllSchools();
+	
 }

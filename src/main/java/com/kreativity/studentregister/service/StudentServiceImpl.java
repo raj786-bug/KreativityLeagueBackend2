@@ -20,12 +20,10 @@ public class StudentServiceImpl implements StudentService{
     private StudentRepo studentRepo;
 	@Override
 	public Student createStudent(Student student) {
-		Student alreadyStudent = studentRepo.findByEmail(student.getEmail()).orElse(null);
-		if (alreadyStudent==null) {
+		
 			// TODO Auto-generated method stub
 			return studentRepo.save(student);
-		}else
-			return null;
+		
 	}
 
 	@Override
@@ -60,6 +58,12 @@ public class StudentServiceImpl implements StudentService{
 			LoginResponse response=new LoginResponse(false,"Login Unsuccessfull");
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
 	}
+	}
+
+	@Override
+	public boolean isEmailExists(String email) {
+		// TODO Auto-generated method stub
+		return studentRepo.existsByEmail(email);
 	}
 	
 	

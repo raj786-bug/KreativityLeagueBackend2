@@ -30,9 +30,18 @@ public class StudentController {
 	 private StudentService studentService;
 	 @CrossOrigin
 	 @PostMapping("/std")
-	    public ResponseEntity<Student> createStudent(@RequestBody Student student) {
-	        Student createdStudent = studentService.createStudent(student);
-	        return ResponseEntity.status(HttpStatus.CREATED).body(createdStudent);
+	    public ResponseEntity<?> createStudent(@RequestBody Student student) {
+	        
+	     // Check if the email already exists in the database
+	        if (studentService.isEmailExists(student.getEmail())) {
+	            // If the email already exists, return a custom error response
+	            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Duplicate email ID not allowed.");
+	        } else {
+	            // If the email is unique, proceed to create the student
+	            Student createdStudent = studentService.createStudent(student);
+	            return ResponseEntity.status(HttpStatus.CREATED).body(createdStudent);
+	        }
+	        
 	    }
 	 @CrossOrigin
 	 @GetMapping("/{id}")
@@ -50,6 +59,7 @@ public class StudentController {
 	        List<Student> students = studentService.getAllStudents();
 	        return ResponseEntity.ok(students);
 	    }
+	    
 	    @DeleteMapping("/{id}")
 	    public ResponseEntity<Void> deleteStudent(@PathVariable Integer stdId) {
 	        studentService.deleteStudent(stdId);

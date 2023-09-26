@@ -1,4 +1,8 @@
-package com.kreativity.studentregister.entity;
+/*package com.kreativity.studentregister.entity;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,33 +15,28 @@ import jakarta.persistence.Table;
 @Table(name="schoolInfo")
 public class SchoolInfo {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="StudentID")
-	private Integer stid;
-	@Column(name="StudentName")
-	private String studentName;
-	@Column(name="DOB")
-	private String dob;
-	@Column(name="Email")
-	private String email;
-	@Column(name="SchoolName")
-	private String schoolName;
-	@Column(name="WhatsappNumber")
-	private String whatsappNumber;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="stdinfoid")
+    private Long stdinfoid;
+	@Column(name="studentName")
+    private String studentName;
+	@Column(name="dob")
+    private LocalDate dob;
+	@Column(name="email")
+    private String email;
+	@Column(name="schoolName")
+    private String schoolName;
+	@Column(name="whatsappNumber")
+    private String whatsappNumber;
 	public SchoolInfo() {
 		super();
-		this.stid = stid;
-		this.studentName = studentName;
-		this.dob = dob;
-		this.email = email;
-		this.schoolName = schoolName;
-		this.whatsappNumber = whatsappNumber;
+		// TODO Auto-generated constructor stub
 	}
-	public Integer getStid() {
-		return stid;
+	public Long getStdinfoid() {
+		return stdinfoid;
 	}
-	public void setStid(Integer stid) {
-		this.stid = stid;
+	public void setStdinfoid(Long stdinfoid) {
+		this.stdinfoid = stdinfoid;
 	}
 	public String getStudentName() {
 		return studentName;
@@ -45,10 +44,10 @@ public class SchoolInfo {
 	public void setStudentName(String studentName) {
 		this.studentName = studentName;
 	}
-	public String getDob() {
+	public LocalDate getDob() {
 		return dob;
 	}
-	public void setDob(String dob) {
+	public void setDob(LocalDate dob) {
 		this.dob = dob;
 	}
 	public String getEmail() {
@@ -71,10 +70,16 @@ public class SchoolInfo {
 	}
 	@Override
 	public String toString() {
-		return "SchoolInfo [stid=" + stid + ", studentName=" + studentName + ", dob=" + dob + ", email=" + email
-				+ ", schoolName=" + schoolName + ", whatsappNumber=" + whatsappNumber + "]";
+		return "SchoolInfo [stdinfoid=" + stdinfoid + ", studentName=" + studentName + ", dob=" + dob + ", email="
+				+ email + ", schoolName=" + schoolName + ", whatsappNumber=" + whatsappNumber + "]";
 	}
+	
+    
+	
+	
+	
 	
 	
 
 }
+*/

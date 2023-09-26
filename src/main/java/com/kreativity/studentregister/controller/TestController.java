@@ -12,7 +12,7 @@ public class TestController {
 	@GetMapping("/")
     public String showForm() {
       
-        return "form";
+        return "Website uptodate";
     }
 
 }
